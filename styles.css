@@ -1043,6 +1043,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; margin-bottom: 8px
 
 @media (max-width: 860px) {
   .nav-hamburger { display: flex; }
+  .btn-nav-play { display: none !important; }
   
   /* Mobile Navigation Drawer */
   .nav-links {
@@ -1179,7 +1180,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; margin-bottom: 8px
   .nav-inner { padding: 0 16px; gap: 8px; }
   .studio-name { font-size: 1.05rem; }
   .nav-logo { height: 22px; }
-  .btn-nav-play { padding: 6px 14px; font-size: 0.78rem; letter-spacing: 0.14em; }
 
   /* Studio Footer */
   .footer-inner { flex-direction: column; gap: 32px; }
