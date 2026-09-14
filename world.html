@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World &amp; Biomes — Stones to Stars | Makwana</title>
+<meta name="description" content="Explore Archaia: The stylized Prehistoric Map, 4 Biomes, and 4-Season Dynamic Weather in Stones to Stars.">
+<link rel="icon" type="image/jpeg" href="public/assets/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="living-world-canvas" class="webgl-canvas"></canvas>
+<div id="env-lighting-overlay" class="env-lighting-overlay"></div>
+
+<!-- Header -->
+<header class="studio-nav" id="studio-nav">
+  <div class="nav-inner">
+    <div class="nav-brand-group">
+      <a href="index.html" class="studio-name">MAKWANA</a>
+      <span class="brand-sep">|</span>
+      <a href="index.html" class="game-brand-link">
+        <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="nav-logo">
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <div class="nav-dropdown-group">
+        <a href="game.html" class="nl-item active">Game <span class="caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="game.html" class="dropdown-link">Overview</a>
+          <a href="season-01.html" class="dropdown-link">Season 01: Stone Age</a>
+          <a href="world.html" class="dropdown-link">World &amp; Biomes</a>
+          <a href="people.html" class="dropdown-link">People (Hu)</a>
+          <a href="wildlife.html" class="dropdown-link">Wildlife &amp; Beasts</a>
+          <a href="equipment.html" class="dropdown-link">Equipment &amp; Tools</a>
+        </div>
+      </div>
+      <a href="news.html" class="nl-item">News</a>
+      <a href="community.html" class="nl-item">Community</a>
+      <a href="contribute.html" class="nl-item">Contribute</a>
+      <a href="join-us.html" class="nl-item">Join Us</a>
+      <div class="nav-dropdown-group">
+        <span class="nl-item">More <span class="caret">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="media.html" class="dropdown-link">Media / Press Kit</a>
+          <a href="about.html" class="dropdown-link">About Makwana</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="play.html" class="btn-nav-play">PLAY</a>
+    </div>
+  </div>
+</header>
+
+<main class="site-main">
+
+  <section class="page-hero">
+    <div class="breadcrumbs"><a href="index.html">Home</a> <span>/</span> <a href="game.html">Game</a> <span>/</span> World &amp; Biomes</div>
+    <span class="section-eyebrow">CARTOGRAPHY OF ARCHAIA</span>
+    <h1>The Living World</h1>
+    <p class="page-lead">
+      A vast, unbroken prehistoric continent. Built on our core philosophy: <strong>restrained, painterly art direction with world-class composition.</strong>
+      The environment is not a static backdrop — it breathes, freezes, and transforms as seasons cycle.
+    </p>
+  </section>
+
+  <!-- Interactive stylized Prehistoric Map -->
+  <section class="site-section" style="padding-top: 0;">
+    <div class="section-container">
+      <div class="valley-map-feature">
+        <div class="vmf-media" style="max-height: 600px;">
+          <img src="public/assets/prehistoric_world_map.jpg" alt="Prehistoric Map of Archaia" class="vmf-img" id="stylized-map-img">
+          <div class="vmf-badge">ARCHAIA · CONTINENTAL SECTORS</div>
+        </div>
+        <div class="vmf-caption">
+          <h4 id="map-active-status">Sector: Archaia Primeval Continental Basin</h4>
+          <p>Select any biome below to align environmental lighting and review climate parameters.</p>
+        </div>
+      </div>
+
+      <!-- 4 Biomes Selection Deck -->
+      <div class="biome-deck">
+        <div class="biome-card-panel active" data-biome="forest">
+          <div class="bcp-media">
+            <img src="public/assets/biome_forest.jpg" alt="Forest Canopy">
+          </div>
+          <div class="bcp-body">
+            <h4>01. Forest Canopy</h4>
+            <p>Primeval pine trees, abundant timber, bloodberries, and riverbeds. Prime hunting terrain.</p>
+          </div>
+        </div>
+
+        <div class="biome-card-panel" data-biome="plains">
+          <div class="bcp-media">
+            <img src="public/assets/biome_plains.jpg" alt="Golden Plains">
+          </div>
+          <div class="bcp-body">
+            <h4>02. Golden Plains</h4>
+            <p>Endless steppe grass, mammoth herds, low natural cover. Dangerous during midday heat.</p>
+          </div>
+        </div>
+
+        <div class="biome-card-panel" data-biome="desert">
+          <div class="bcp-media">
+            <img src="public/assets/biome_desert.jpg" alt="Red Sandstone Desert">
+          </div>
+          <div class="bcp-body">
+            <h4>03. Sandstone Desert</h4>
+            <p>Arid mesa canyons, obsidian deposits, extreme dehydration hazard, nocturnal vipers.</p>
+          </div>
+        </div>
+
+        <div class="biome-card-panel" data-biome="snow">
+          <div class="bcp-media">
+            <img src="public/assets/biome_snow.jpg" alt="Frozen Peaks">
+          </div>
+          <div class="bcp-body">
+            <h4>04. Frozen Peaks</h4>
+            <p>Sub-zero blizzards, mammoth bone graveyard, glacial caves. Requires fur coats and campfire.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic World: 4 Seasons Scrubber Engine -->
+  <section class="site-section">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">DYNAMIC SYSTEM</span>
+        <h2>The 4 Seasons of Archaia</h2>
+        <p class="section-lead">
+          In Archaia, time changes everything. Scrutinize the survival conditions across the annual climate loop.
+        </p>
+      </div>
+
+      <div class="season-scrubber-box">
+        <div class="center">
+          <h3 id="season-title" style="color: var(--c-amber); font-size: 1.6rem;">Spring · The Thaw</h3>
+          <p id="season-desc" style="font-size: 0.95rem; color: rgba(237,228,211,0.85); max-width: 600px; margin: 8px auto 0;">
+            Snowmelt fills river gorges. Fresh green shoots bloom and hibernating predators awaken hungry.
+          </p>
+        </div>
+
+        <div class="slider-wrap">
+          <input type="range" min="0" max="3" value="0" step="1" id="season-slider" class="season-range-input" aria-label="Season Scrubber">
+        </div>
+
+        <div class="season-ticks">
+          <span class="s-label active" data-s="0">SPRING</span>
+          <span class="s-label" data-s="1">SUMMER</span>
+          <span class="s-label" data-s="2">AUTUMN</span>
+          <span class="s-label" data-s="3">WINTER</span>
+        </div>
+
+        <div class="season-telemetry-grid">
+          <div class="tele-pill" id="sa-temp">Temperature: Mild (16°C)</div>
+          <div class="tele-pill" id="sa-food">Forage: Abundant</div>
+          <div class="tele-pill" id="sa-threat">Activity: Rising</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="studio-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-studio-brand">MAKWANA</span>
+      <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="fl-logo">
+      <p class="fl-tagline">THE WORLD WAS NEVER YOURS. YOU ONLY LEARNED TO SURVIVE IN IT.</p>
+      <p class="fl-copy">© 2026 Makwana. All rights reserved.</p>
+    </div>
+    <div class="footer-nav-columns">
+      <div class="fn-col">
+        <span class="fn-title">Game</span>
+        <a href="game.html">The Game</a>
+        <a href="season-01.html">Season 01</a>
+        <a href="world.html">World &amp; Biomes</a>
+        <a href="people.html">People</a>
+        <a href="wildlife.html">Wildlife</a>
+        <a href="equipment.html">Equipment</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Studio</span>
+        <a href="news.html">News</a>
+        <a href="community.html">Community</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="join-us.html">Join Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Connect</span>
+        <a href="media.html">Press Kit</a>
+        <a href="play.html">Play</a>
+        <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Notes &amp; News — Stones to Stars | Makwana</title>
+<meta name="description" content="Read development logs, behind-the-scenes dispatches, and studio updates from Makwana for Stones to Stars.">
+<link rel="icon" type="image/jpeg" href="public/assets/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="living-world-canvas" class="webgl-canvas"></canvas>
+<div id="env-lighting-overlay" class="env-lighting-overlay"></div>
+
+<!-- Header -->
+<header class="studio-nav" id="studio-nav">
+  <div class="nav-inner">
+    <div class="nav-brand-group">
+      <a href="index.html" class="studio-name">MAKWANA</a>
+      <span class="brand-sep">|</span>
+      <a href="index.html" class="game-brand-link">
+        <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="nav-logo">
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <div class="nav-dropdown-group">
+        <a href="game.html" class="nl-item">Game <span class="caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="game.html" class="dropdown-link">Overview</a>
+          <a href="season-01.html" class="dropdown-link">Season 01: Stone Age</a>
+          <a href="world.html" class="dropdown-link">World &amp; Biomes</a>
+          <a href="people.html" class="dropdown-link">People (Hu)</a>
+          <a href="wildlife.html" class="dropdown-link">Wildlife &amp; Beasts</a>
+          <a href="equipment.html" class="dropdown-link">Equipment &amp; Tools</a>
+        </div>
+      </div>
+      <a href="news.html" class="nl-item active">News</a>
+      <a href="community.html" class="nl-item">Community</a>
+      <a href="contribute.html" class="nl-item">Contribute</a>
+      <a href="join-us.html" class="nl-item">Join Us</a>
+      <div class="nav-dropdown-group">
+        <span class="nl-item">More <span class="caret">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="media.html" class="dropdown-link">Media / Press Kit</a>
+          <a href="about.html" class="dropdown-link">About Makwana</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="play.html" class="btn-nav-play">PLAY</a>
+    </div>
+  </div>
+</header>
+
+<main class="site-main">
+
+  <section class="page-hero">
+    <div class="breadcrumbs"><a href="index.html">Home</a> <span>/</span> News</div>
+    <span class="section-eyebrow">DISPATCHES FROM THE STUDIO</span>
+    <h1>Field Notes</h1>
+    <p class="page-lead">
+      We document the evolution of Stones to Stars as the world is being born. Read technical deep-dives, level design philosophy, and community announcements.
+    </p>
+
+    <!-- Filter Buttons -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">ALL DISPATCHES</button>
+      <button class="filter-btn" data-filter="dev">DEVELOPMENT</button>
+      <button class="filter-btn" data-filter="design">DESIGN</button>
+      <button class="filter-btn" data-filter="art">Art &amp; Visuals</button>
+      <button class="filter-btn" data-filter="news">ANNOUNCEMENTS</button>
+    </div>
+  </section>
+
+  <!-- Devlog Articles Grid -->
+  <section class="site-section" style="padding-top: 0;">
+    <div class="section-container">
+      <div class="devlog-grid">
+        <!-- Log 014 -->
+        <article class="devlog-card" data-cat="dev">
+          <div class="dl-media">
+            <img src="public/assets/hero_bg.jpg" alt="Building the First Valley">
+            <span class="dl-tag">FIELD NOTES 014</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">SEPTEMBER 2026 · DEVELOPMENT</span>
+            <h3>Building the First Valley</h3>
+            <p>
+              We started with a blank terrain and began sculpting the first playable prehistoric valley — balancing mountain silhouettes, river crossings, and dense brush lines for third-person stealth.
+            </p>
+          </div>
+        </article>
+
+        <!-- Log 013 -->
+        <article class="devlog-card" data-cat="design">
+          <div class="dl-media">
+            <img src="public/assets/cinder_threat.jpg" alt="Designing Cinder AI">
+            <span class="dl-tag">FIELD NOTES 013</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">AUGUST 2026 · DESIGN</span>
+            <h3>Designing Cinder: Animal Perception</h3>
+            <p>
+              A predator shouldn't just be an obstacle; it should feel alive. Tuning hearing radius, sight cones, and stealth crouch thresholds so every encounter feels tense and earned.
+            </p>
+          </div>
+        </article>
+
+        <!-- Log 012 -->
+        <article class="devlog-card" data-cat="art">
+          <div class="dl-media">
+            <img src="public/assets/prehistoric_world_map.jpg" alt="Cartography of Archaia">
+            <span class="dl-tag">FIELD NOTES 012</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">JULY 2026 · Art &amp; Visuals</span>
+            <h3>Cartography of Archaia</h3>
+            <p>
+              Designing the overarching continent layout. How modular terrain assets and stylized painterly composition allow our independent team to focus on composition, silhouette clarity, and atmospheric mood.
+            </p>
+          </div>
+        </article>
+
+        <!-- Log 011 -->
+        <article class="devlog-card" data-cat="design">
+          <div class="dl-media">
+            <img src="public/assets/weapon_spear.jpg" alt="Knapping Flint">
+            <span class="dl-tag">FIELD NOTES 011</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">JUNE 2026 · DESIGN</span>
+            <h3>Knapping Flint: Physics of Primitive Tools</h3>
+            <p>
+              Why we eliminated metal weapons entirely from Season 01. How weapon degradation, knapping rhythm, and bound rawhide cords create genuine historical grounding.
+            </p>
+          </div>
+        </article>
+
+        <!-- Log 010 -->
+        <article class="devlog-card" data-cat="dev">
+          <div class="dl-media">
+            <img src="public/assets/biome_forest.jpg" alt="Atmospheric Lighting">
+            <span class="dl-tag">FIELD NOTES 010</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">MAY 2026 · DEVELOPMENT</span>
+            <h3>Atmospheric Shaders &amp; Day-Night Cycles</h3>
+            <p>
+              Simulating dynamic sun angles through dense pine canopies. The challenge of balancing visibility for stealth gameplay while maintaining eerie pitch-black nights.
+            </p>
+          </div>
+        </article>
+
+        <!-- Log 009 -->
+        <article class="devlog-card" data-cat="news">
+          <div class="dl-media">
+            <img src="public/assets/gameplay_scene.jpg" alt="Announcing Alpha Playtest">
+            <span class="dl-tag">FIELD NOTES 009</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">APRIL 2026 · ANNOUNCEMENTS</span>
+            <h3>Opening the PC Closed Alpha Ledger</h3>
+            <p>
+              Inviting our first wave of external players to test movement physics, stamina burn curves, and predator evasion in the First Valley.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="studio-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-studio-brand">MAKWANA</span>
+      <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="fl-logo">
+      <p class="fl-tagline">THE WORLD WAS NEVER YOURS. YOU ONLY LEARNED TO SURVIVE IN IT.</p>
+      <p class="fl-copy">© 2026 Makwana. All rights reserved.</p>
+    </div>
+    <div class="footer-nav-columns">
+      <div class="fn-col">
+        <span class="fn-title">Game</span>
+        <a href="game.html">The Game</a>
+        <a href="season-01.html">Season 01</a>
+        <a href="world.html">World &amp; Biomes</a>
+        <a href="people.html">People</a>
+        <a href="wildlife.html">Wildlife</a>
+        <a href="equipment.html">Equipment</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Studio</span>
+        <a href="news.html">News</a>
+        <a href="community.html">Community</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="join-us.html">Join Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Connect</span>
+        <a href="media.html">Press Kit</a>
+        <a href="play.html">Play</a>
+        <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

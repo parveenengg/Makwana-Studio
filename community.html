@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — Stones to Stars | Makwana</title>
+<meta name="description" content="Join the Stones to Stars tribal community. Share fan art, screenshots, playtest clips, and participate in discussions.">
+<link rel="icon" type="image/jpeg" href="public/assets/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="living-world-canvas" class="webgl-canvas"></canvas>
+<div id="env-lighting-overlay" class="env-lighting-overlay"></div>
+
+<!-- Header -->
+<header class="studio-nav" id="studio-nav">
+  <div class="nav-inner">
+    <div class="nav-brand-group">
+      <a href="index.html" class="studio-name">MAKWANA</a>
+      <span class="brand-sep">|</span>
+      <a href="index.html" class="game-brand-link">
+        <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="nav-logo">
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <div class="nav-dropdown-group">
+        <a href="game.html" class="nl-item">Game <span class="caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="game.html" class="dropdown-link">Overview</a>
+          <a href="season-01.html" class="dropdown-link">Season 01: Stone Age</a>
+          <a href="world.html" class="dropdown-link">World &amp; Biomes</a>
+          <a href="people.html" class="dropdown-link">People (Hu)</a>
+          <a href="wildlife.html" class="dropdown-link">Wildlife &amp; Beasts</a>
+          <a href="equipment.html" class="dropdown-link">Equipment &amp; Tools</a>
+        </div>
+      </div>
+      <a href="news.html" class="nl-item">News</a>
+      <a href="community.html" class="nl-item active">Community</a>
+      <a href="contribute.html" class="nl-item">Contribute</a>
+      <a href="join-us.html" class="nl-item">Join Us</a>
+      <div class="nav-dropdown-group">
+        <span class="nl-item">More <span class="caret">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="media.html" class="dropdown-link">Media / Press Kit</a>
+          <a href="about.html" class="dropdown-link">About Makwana</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="play.html" class="btn-nav-play">PLAY</a>
+    </div>
+  </div>
+</header>
+
+<main class="site-main">
+
+  <section class="page-hero">
+    <div class="breadcrumbs"><a href="index.html">Home</a> <span>/</span> Community</div>
+    <span class="section-eyebrow">TRIBAL GATHERING</span>
+    <h1>The Community</h1>
+    <p class="page-lead">
+      Stones to Stars is built out in the open alongside a passionate indie community. We do not attempt to be another social network — this site aggregates the best moments shared across our community hubs.
+    </p>
+    <div class="hero-cta-group">
+      <a href="https://discord.com" target="_blank" rel="noopener" class="btn-community-join">
+        <span>JOIN OUR DISCORD COMMUNITY →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Showcase Cards -->
+  <section class="site-section" style="padding-top: 0;">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">COMMUNITY SPOTLIGHT</span>
+        <h2>What Are You Discovering?</h2>
+      </div>
+
+      <div class="community-grid">
+        <div class="comm-card">
+          <div class="comm-category">SCREENSHOT</div>
+          <h4>Lighting on the High Ridge</h4>
+          <p>Late afternoon sun shafts breaking through the pine canopy in the first valley build.</p>
+          <span class="comm-author">by @ArchaiaExplorer</span>
+        </div>
+
+        <div class="comm-card">
+          <div class="comm-category">FAN ART</div>
+          <h4>Hu in the Mist</h4>
+          <p>Stylized digital painting of the protagonist crouched near the riverbed.</p>
+          <span class="comm-author">by @PrimitiveDraws</span>
+        </div>
+
+        <div class="comm-card">
+          <div class="comm-category">GAMEPLAY</div>
+          <h4>The Egg Escape</h4>
+          <p>Clip testing the sprint mechanics when escaping Cinder's alert radius.</p>
+          <span class="comm-author">by Studio Playtester</span>
+        </div>
+
+        <div class="comm-card">
+          <div class="comm-category">DISCUSSION</div>
+          <h4>Survival Without Clutter</h4>
+          <p>How minimal HUDs and atmospheric audio cues make stealth significantly more immersive.</p>
+          <span class="comm-author">in #game-design</span>
+        </div>
+
+        <div class="comm-card">
+          <div class="comm-category">CREATION</div>
+          <h4>Knapped Obsidian Weaponry</h4>
+          <p>cinematic stylized spear and bone dagger models designed by community contributors.</p>
+          <span class="comm-author">via GitHub Tools</span>
+        </div>
+
+        <div class="comm-card">
+          <div class="comm-category">EXPEDITION</div>
+          <h4>The Roadmap to the Stars</h4>
+          <p>Thematic theories on how humanity's tools evolve from stones to interplanetary voyages.</p>
+          <span class="comm-author">in Community Forum</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Portals -->
+  <section class="site-section">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">CHANNELS</span>
+        <h2>Connect With the Tribe</h2>
+      </div>
+
+      <div class="pillars-grid">
+        <a href="https://discord.com" target="_blank" rel="noopener" class="pillar-card">
+          <div class="p-icon">💬</div>
+          <h3>DISCORD</h3>
+          <p>Daily development banter, playtest clips, feedback channels, and direct chats with the team.</p>
+        </a>
+
+        <a href="https://github.com" target="_blank" rel="noopener" class="pillar-card">
+          <div class="p-icon">⌨️</div>
+          <h3>GITHUB</h3>
+          <p>Technical RFCs, open source tools, bug tracking, and asset pipeline discussions.</p>
+        </a>
+
+        <a href="https://reddit.com" target="_blank" rel="noopener" class="pillar-card">
+          <div class="p-icon">🌐</div>
+          <h3>REDDIT</h3>
+          <p>Community lore theories, high-resolution wallpaper sharing, and gameplay discussions.</p>
+        </a>
+
+        <a href="https://twitter.com" target="_blank" rel="noopener" class="pillar-card">
+          <div class="p-icon">📢</div>
+          <h3>TWITTER / X</h3>
+          <p>Official release announcements, short gameplay video clips, and studio dispatches.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="studio-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-studio-brand">MAKWANA</span>
+      <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="fl-logo">
+      <p class="fl-tagline">THE WORLD WAS NEVER YOURS. YOU ONLY LEARNED TO SURVIVE IN IT.</p>
+      <p class="fl-copy">© 2026 Makwana. All rights reserved.</p>
+    </div>
+    <div class="footer-nav-columns">
+      <div class="fn-col">
+        <span class="fn-title">Game</span>
+        <a href="game.html">The Game</a>
+        <a href="season-01.html">Season 01</a>
+        <a href="world.html">World &amp; Biomes</a>
+        <a href="people.html">People</a>
+        <a href="wildlife.html">Wildlife</a>
+        <a href="equipment.html">Equipment</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Studio</span>
+        <a href="news.html">News</a>
+        <a href="community.html">Community</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="join-us.html">Join Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Connect</span>
+        <a href="media.html">Press Kit</a>
+        <a href="play.html">Play</a>
+        <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

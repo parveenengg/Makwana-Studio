@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Season 01: Stone Age — Stones to Stars | Makwana</title>
+<meta name="description" content="Explore Season 01: Stone Age. The First Valley, primitive survival, and the Cinder apex predator encounter.">
+<link rel="icon" type="image/jpeg" href="public/assets/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="living-world-canvas" class="webgl-canvas"></canvas>
+<div id="env-lighting-overlay" class="env-lighting-overlay"></div>
+
+<!-- Header -->
+<header class="studio-nav" id="studio-nav">
+  <div class="nav-inner">
+    <div class="nav-brand-group">
+      <a href="index.html" class="studio-name">MAKWANA</a>
+      <span class="brand-sep">|</span>
+      <a href="index.html" class="game-brand-link">
+        <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="nav-logo">
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <div class="nav-dropdown-group">
+        <a href="game.html" class="nl-item active">Game <span class="caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="game.html" class="dropdown-link">Overview</a>
+          <a href="season-01.html" class="dropdown-link">Season 01: Stone Age</a>
+          <a href="world.html" class="dropdown-link">World &amp; Biomes</a>
+          <a href="people.html" class="dropdown-link">People (Hu)</a>
+          <a href="wildlife.html" class="dropdown-link">Wildlife &amp; Beasts</a>
+          <a href="equipment.html" class="dropdown-link">Equipment &amp; Tools</a>
+        </div>
+      </div>
+      <a href="news.html" class="nl-item">News</a>
+      <a href="community.html" class="nl-item">Community</a>
+      <a href="contribute.html" class="nl-item">Contribute</a>
+      <a href="join-us.html" class="nl-item">Join Us</a>
+      <div class="nav-dropdown-group">
+        <span class="nl-item">More <span class="caret">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="media.html" class="dropdown-link">Media / Press Kit</a>
+          <a href="about.html" class="dropdown-link">About Makwana</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="play.html" class="btn-nav-play">PLAY</a>
+    </div>
+  </div>
+</header>
+
+<main class="site-main">
+
+  <section class="page-hero">
+    <div class="breadcrumbs"><a href="index.html">Home</a> <span>/</span> <a href="game.html">Game</a> <span>/</span> Season 01</div>
+    <span class="section-eyebrow">THE INAUGURAL CHAPTER</span>
+    <h1>Season 01: Stone Age</h1>
+    <p class="season-intro-quote">“Before cities. Before kingdoms. Before history had a name.”</p>
+    <p class="page-lead">
+      Season 01 is the opening foundation of the Stones to Stars franchise. You step into the prehistoric valley of Archaia during humanity's most precarious era: when flint and fire were our only shield against apex titans.
+    </p>
+  </section>
+
+  <!-- Reveal Trailer Cinema Player -->
+  <section class="site-section" style="padding-top: 0;">
+    <div class="section-container">
+      <div class="cinema-theater-frame" id="cinema-theater-frame">
+        <div class="ambient-glow-halo" id="ambient-glow-halo"></div>
+        <div class="cinema-video-wrapper">
+          <video
+            id="cinema-video"
+            preload="metadata"
+            poster="public/assets/hero_bg.jpg"
+            playsinline
+          >
+            <source src="public/assets/trailer.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+
+          <!-- Floating Center Play Trigger -->
+          <div class="cinema-center-trigger" id="cinema-center-trigger">
+            <button class="btn-cinema-play" id="btn-cinema-center-play" aria-label="Play Trailer">
+              <span class="cinema-play-ring"></span>
+              <span class="cinema-play-glyph">▶</span>
+            </button>
+            <span class="cinema-trigger-label">WATCH OFFICIAL REVEAL TRAILER</span>
+          </div>
+
+          <!-- Custom Cinema HUD Control Dock -->
+          <div class="cinema-controls-dock" id="cinema-controls-dock">
+            <div class="cinema-scrub-wrap" id="cinema-scrub-wrap">
+              <div class="cinema-progress-track" id="cinema-progress-track">
+                <div class="cinema-progress-fill" id="cinema-progress-fill"></div>
+                <div class="cinema-scrub-handle" id="cinema-scrub-handle"></div>
+              </div>
+            </div>
+
+            <div class="cinema-dock-row">
+              <div class="dock-left">
+                <button class="cinema-btn" id="btn-cinema-toggle" aria-label="Toggle Play/Pause">
+                  <span id="cinema-toggle-icon">▶</span>
+                </button>
+                <div class="cinema-time-display">
+                  <span id="cinema-current-time">00:00</span>
+                  <span class="time-sep">/</span>
+                  <span id="cinema-duration">00:00</span>
+                </div>
+              </div>
+
+              <div class="dock-center">
+                <span class="cinema-spec-pill">SEASON 01 · STONE AGE</span>
+                <span class="cinema-spec-pill">FIRST VALLEY REVEAL</span>
+              </div>
+
+              <div class="dock-right">
+                <button class="cinema-btn" id="btn-cinema-volume" aria-label="Mute / Unmute">
+                  <span id="cinema-volume-icon">🔊</span>
+                </button>
+                <button class="cinema-btn" id="btn-cinema-fullscreen" aria-label="Toggle Fullscreen">
+                  <span>⛶</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Setting: The First Valley -->
+  <section class="site-section">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">THE REGION</span>
+        <h2>The First Valley</h2>
+        <p class="section-lead">
+          A self-contained prehistoric valley engineered as a vertical slice of our survival world.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="p-icon">🌲</div>
+          <h3>FOREST CANOPY</h3>
+          <p>Towering prehistoric pines create shadow lines. Thick brush masks your human scent, but conceals stalking predators.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="p-icon">🌊</div>
+          <h3>RIVER GORGE</h3>
+          <p>Carved by glacial runoff. Essential for hydration and cold water baths to throw off scent hounds, but river rapids can sweep you away.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="p-icon">⛰️</div>
+          <h3>HIGH RIDGE</h3>
+          <p>Vantage point with panoramic view of the entire valley. Exposed to bitter winds and lightning strikes during summer storms.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="p-icon">🌋</div>
+          <h3>CRATER NEST</h3>
+          <p>Volcanic basin guarded by Cinder. Thermal vents illuminate the crater, where valuable nutrient-dense eggs are brooded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Threat: Cinder Encounter -->
+  <section class="site-section">
+    <div class="section-container">
+      <div class="valley-map-feature">
+        <div class="vmf-media">
+          <img src="public/assets/cinder_threat.jpg" alt="Cinder the Apex Predator" class="vmf-img">
+          <div class="vmf-badge">APEX PREDATOR THREAT · CINDER</div>
+        </div>
+        <div class="vmf-caption">
+          <h4>The Cinder Encounter</h4>
+          <p style="margin-bottom: 12px;">
+            Cinder is not a boss with a health bar you slash mindlessly. It is an apex carnivore that senses footsteps, listens for snapping twigs, and tracks wind-carried human scent.
+          </p>
+          <p>
+            Survival requires crouch-walking through underbrush, reading wind direction, holding your breath when its gaze sweeps past, and timing your escape when its attention breaks.
+          </p>
+          <div style="margin-top: 18px;">
+            <a href="wildlife.html" style="color: var(--c-amber); font-family: var(--fs); font-weight: 700; letter-spacing: 0.12em;">
+              READ COMPLETE WILDLIFE PROFILE →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Season 01 Navigation Actions -->
+  <section class="site-section">
+    <div class="section-container center">
+      <span class="section-eyebrow">CONTINUE EXPEDITION</span>
+      <h2>Discover More of Season 01</h2>
+      <div class="hero-cta-group" style="margin-top: 24px;">
+        <a href="world.html" class="btn-hero-primary"><span>CONTINENT MAP &amp; BIOMES</span> <span>→</span></a>
+        <a href="people.html" class="btn-hero-secondary"><span>MEET HU (PROTAGONIST)</span> <span>→</span></a>
+        <a href="equipment.html" class="btn-hero-secondary"><span>PRIMITIVE FLINT ARSENAL</span> <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="studio-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-studio-brand">MAKWANA</span>
+      <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="fl-logo">
+      <p class="fl-tagline">THE WORLD WAS NEVER YOURS. YOU ONLY LEARNED TO SURVIVE IN IT.</p>
+      <p class="fl-copy">© 2026 Makwana. All rights reserved.</p>
+    </div>
+    <div class="footer-nav-columns">
+      <div class="fn-col">
+        <span class="fn-title">Game</span>
+        <a href="game.html">The Game</a>
+        <a href="season-01.html">Season 01</a>
+        <a href="world.html">World &amp; Biomes</a>
+        <a href="people.html">People</a>
+        <a href="wildlife.html">Wildlife</a>
+        <a href="equipment.html">Equipment</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Studio</span>
+        <a href="news.html">News</a>
+        <a href="community.html">Community</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="join-us.html">Join Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Connect</span>
+        <a href="media.html">Press Kit</a>
+        <a href="play.html">Play</a>
+        <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

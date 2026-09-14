@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Stones to Stars — Alpha Access | Makwana</title>
+<meta name="description" content="Register for upcoming closed PC playtests of Stones to Stars. Check platform availability and system specs.">
+<link rel="icon" type="image/jpeg" href="public/assets/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="living-world-canvas" class="webgl-canvas"></canvas>
+<div id="env-lighting-overlay" class="env-lighting-overlay"></div>
+
+<!-- Header -->
+<header class="studio-nav" id="studio-nav">
+  <div class="nav-inner">
+    <div class="nav-brand-group">
+      <a href="index.html" class="studio-name">MAKWANA</a>
+      <span class="brand-sep">|</span>
+      <a href="index.html" class="game-brand-link">
+        <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="nav-logo">
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <div class="nav-dropdown-group">
+        <a href="game.html" class="nl-item">Game <span class="caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="game.html" class="dropdown-link">Overview</a>
+          <a href="season-01.html" class="dropdown-link">Season 01: Stone Age</a>
+          <a href="world.html" class="dropdown-link">World &amp; Biomes</a>
+          <a href="people.html" class="dropdown-link">People (Hu)</a>
+          <a href="wildlife.html" class="dropdown-link">Wildlife &amp; Beasts</a>
+          <a href="equipment.html" class="dropdown-link">Equipment &amp; Tools</a>
+        </div>
+      </div>
+      <a href="news.html" class="nl-item">News</a>
+      <a href="community.html" class="nl-item">Community</a>
+      <a href="contribute.html" class="nl-item">Contribute</a>
+      <a href="join-us.html" class="nl-item">Join Us</a>
+      <div class="nav-dropdown-group">
+        <span class="nl-item">More <span class="caret">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="media.html" class="dropdown-link">Media / Press Kit</a>
+          <a href="about.html" class="dropdown-link">About Makwana</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="play.html" class="btn-nav-play">PLAY</a>
+    </div>
+  </div>
+</header>
+
+<main class="site-main">
+
+  <section class="page-hero">
+    <div class="breadcrumbs"><a href="index.html">Home</a> <span>/</span> Play</div>
+    <span class="section-eyebrow">ACCESS &amp; PLATFORMS</span>
+    <h1>Play Stones to Stars</h1>
+    <p class="page-lead">
+      We are developing the initial playable vertical slice of the First Valley for PC.
+      Closed test builds are distributed directly to registered community members.
+    </p>
+  </section>
+
+  <!-- Platform Breakdown Cards -->
+  <section class="site-section" style="padding-top: 0;">
+    <div class="section-container">
+      <div class="platform-specs-grid">
+        <div class="plat-card active-plat">
+          <span class="plat-badge">PRIMARY TARGET</span>
+          <h4>PC</h4>
+          <p>Windows · macOS · Linux</p>
+          <span class="plat-status">● In Active Pre-Alpha Development</span>
+        </div>
+
+        <div class="plat-card upcoming-plat">
+          <span class="plat-badge">SUBSEQUENT PHASE</span>
+          <h4>MOBILE</h4>
+          <p>Android · iOS</p>
+          <span class="plat-status">○ Planned for Later Milestones</span>
+        </div>
+      </div>
+
+      <!-- Playtest Registration Box -->
+      <div class="playtest-form-box center">
+        <span class="section-eyebrow">EXCLUSIVE ALPHA WAVE</span>
+        <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Register for Closed Playtest Drops</h3>
+        <p style="font-size: 0.92rem; color: rgba(237,228,211,0.85); max-width: 500px; margin: 0 auto 24px;">
+          Enter your email to receive direct test build access links, bug tracking invites, and patch notes when the First Valley slice goes live.
+        </p>
+
+        <form class="alpha-form" id="alpha-form">
+          <div class="form-row">
+            <input type="email" placeholder="Enter your email address" required aria-label="Email Address">
+            <button type="submit" class="btn-alpha-submit">REGISTER FOR ACCESS →</button>
+          </div>
+          <p class="form-privacy">🔒 Direct studio communication only. Zero marketing spam.</p>
+        </form>
+
+        <div class="alpha-success" id="alpha-success" hidden>
+          <span style="font-size: 1.5rem; display: block; margin-bottom: 6px;">✓</span>
+          <p>You have been registered on the Makwana playtest ledger. We will email your build access token when testing begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Specifications Table -->
+  <section class="site-section">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">HARDWARE PROFILE</span>
+        <h2>PC System Requirements</h2>
+        <p class="section-lead">
+          Thanks to our streamlined art direction and optimized engine pipeline, Stones to Stars runs smoothly across modern laptops and dedicated gaming PCs.
+        </p>
+      </div>
+
+      <div class="about-card" style="max-width: 780px;">
+        <table class="factsheet-table">
+          <tbody>
+            <tr>
+              <td>OPERATING SYSTEM</td>
+              <td>Windows 10/11 (64-bit), macOS 12+ (Apple Silicon), Ubuntu 22.04+</td>
+            </tr>
+            <tr>
+              <td>PROCESSOR (CPU)</td>
+              <td>Intel Core i5-6400 / AMD Ryzen 3 1200 or Apple M1</td>
+            </tr>
+            <tr>
+              <td>MEMORY (RAM)</td>
+              <td>8 GB RAM (16 GB Recommended)</td>
+            </tr>
+            <tr>
+              <td>GRAPHICS (GPU)</td>
+              <td>NVIDIA GTX 1060 / AMD Radeon RX 580 (4GB VRAM) or Apple M1 GPU</td>
+            </tr>
+            <tr>
+              <td>STORAGE</td>
+              <td>12 GB available space (SSD strongly recommended)</td>
+            </tr>
+            <tr>
+              <td>INPUT SUPPORT</td>
+              <td>Full Gamepad (Xbox/PlayStation) + Keyboard &amp; Mouse</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="studio-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-studio-brand">MAKWANA</span>
+      <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="fl-logo">
+      <p class="fl-tagline">THE WORLD WAS NEVER YOURS. YOU ONLY LEARNED TO SURVIVE IN IT.</p>
+      <p class="fl-copy">© 2026 Makwana. All rights reserved.</p>
+    </div>
+    <div class="footer-nav-columns">
+      <div class="fn-col">
+        <span class="fn-title">Game</span>
+        <a href="game.html">The Game</a>
+        <a href="season-01.html">Season 01</a>
+        <a href="world.html">World &amp; Biomes</a>
+        <a href="people.html">People</a>
+        <a href="wildlife.html">Wildlife</a>
+        <a href="equipment.html">Equipment</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Studio</span>
+        <a href="news.html">News</a>
+        <a href="community.html">Community</a>
+        <a href="contribute.html">Contribute</a>
+        <a href="join-us.html">Join Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Connect</span>
+        <a href="media.html">Press Kit</a>
+        <a href="play.html">Play</a>
+        <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

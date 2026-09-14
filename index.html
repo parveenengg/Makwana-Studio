@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makwana | Stones to Stars — Official Game &amp; Studio</title>
+<meta name="description" content="Official website of Stones to Stars by Makwana. A stylized prehistoric third-person survival adventure game. Before civilization, there was survival.">
+<meta property="og:title" content="Makwana — Stones to Stars">
+<meta property="og:description" content="Before civilization, there was survival. Explore Season 01: Stone Age.">
+<meta property="og:image" content="public/assets/hero_bg.jpg">
+<meta property="og:type" content="website">
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="public/assets/favicon.jpg">
+<link rel="apple-touch-icon" href="public/assets/favicon.jpg">
+
+<!-- Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════
+     THREE.JS LIVING WORLD ATMOSPHERIC CANVAS
+     ══════════════════════════════════════════════════════════════ -->
+<canvas id="living-world-canvas" class="webgl-canvas"></canvas>
+<div id="env-lighting-overlay" class="env-lighting-overlay"></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     MAKWANA STUDIO NAVIGATION WITH DROPDOWNS
+     ══════════════════════════════════════════════════════════════ -->
+<header class="studio-nav" id="studio-nav">
+  <div class="nav-inner">
+    <div class="nav-brand-group">
+      <a href="index.html" class="studio-name">MAKWANA</a>
+      <span class="brand-sep">|</span>
+      <a href="index.html" class="game-brand-link">
+        <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="nav-logo">
+      </a>
+    </div>
+
+    <nav class="nav-links" id="nav-links">
+      <!-- Game Dropdown -->
+      <div class="nav-dropdown-group">
+        <a href="game.html" class="nl-item">Game <span class="caret">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="game.html" class="dropdown-link">Overview</a>
+          <a href="season-01.html" class="dropdown-link">Season 01: Stone Age</a>
+          <a href="world.html" class="dropdown-link">World &amp; Biomes</a>
+          <a href="people.html" class="dropdown-link">People (Hu)</a>
+          <a href="wildlife.html" class="dropdown-link">Wildlife &amp; Beasts</a>
+          <a href="equipment.html" class="dropdown-link">Equipment &amp; Tools</a>
+        </div>
+      </div>
+
+      <a href="news.html" class="nl-item">News</a>
+      <a href="community.html" class="nl-item">Community</a>
+      <a href="contribute.html" class="nl-item">Contribute</a>
+      <a href="join-us.html" class="nl-item">Join Us</a>
+
+      <!-- More Dropdown -->
+      <div class="nav-dropdown-group">
+        <span class="nl-item">More <span class="caret">▾</span></span>
+        <div class="nav-dropdown-menu">
+          <a href="media.html" class="dropdown-link">Media / Press Kit</a>
+          <a href="about.html" class="dropdown-link">About Makwana</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="play.html" class="btn-nav-play">PLAY</a>
+    </div>
+  </div>
+</header>
+
+<main class="site-main">
+
+  <!-- ──────────────────────────────────────────────────────────
+       HERO: EMOTIONAL CINEMATIC GATEWAY
+       ────────────────────────────────────────────────────────── -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">SEASON 01 — STONE AGE</div>
+      
+      <div class="hero-logo-wrap">
+        <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="hero-logo-img">
+      </div>
+
+      <h1 class="hero-tagline">
+        Before civilization,<br>
+        <span class="highlight-accent">there was survival.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Humanity’s story begins long before cities, kingdoms, and machines. You are small. The world is ancient and enormous. Survive by being smarter than what hunts you.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#trailer-theater" class="btn-hero-primary" id="btn-hero-trailer">
+          <span class="pulse-ring"></span>
+          <span>WATCH REVEAL TRAILER</span>
+          <span class="play-icon">▶</span>
+        </a>
+        <a href="world.html" class="btn-hero-secondary">
+          <span>EXPLORE THE WORLD</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────
+       OFFICIAL REVEAL THEATER (HIGH TECH STACK PLACEMENT)
+       Custom Cinema Player with Ambient Halo & Custom Controls
+       ────────────────────────────────────────────────────────── -->
+  <section class="site-section section-trailer-showcase" id="trailer-theater">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow text-accent">FIRST LOOK · 4K REVEAL CUT</span>
+        <h2>Witness the World in Motion</h2>
+        <p class="section-lead">
+          The First Valley comes alive. Experience the raw tension of early human survival, stealth observation, and primeval encounters.
+        </p>
+      </div>
+
+      <!-- Advanced Cinema Player Component -->
+      <div class="cinema-theater-frame" id="cinema-theater-frame">
+        <div class="ambient-glow-halo" id="ambient-glow-halo"></div>
+        <div class="cinema-video-wrapper">
+          <video
+            id="cinema-video"
+            preload="metadata"
+            poster="public/assets/hero_bg.jpg"
+            playsinline
+          >
+            <source src="public/assets/trailer.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+
+          <!-- Floating Center Play Trigger -->
+          <div class="cinema-center-trigger" id="cinema-center-trigger">
+            <button class="btn-cinema-play" id="btn-cinema-center-play" aria-label="Play Trailer">
+              <span class="cinema-play-ring"></span>
+              <span class="cinema-play-glyph">▶</span>
+            </button>
+            <span class="cinema-trigger-label">WATCH OFFICIAL REVEAL TRAILER</span>
+          </div>
+
+          <!-- Custom Cinema HUD Control Dock -->
+          <div class="cinema-controls-dock" id="cinema-controls-dock">
+            <div class="cinema-scrub-wrap" id="cinema-scrub-wrap">
+              <div class="cinema-progress-track" id="cinema-progress-track">
+                <div class="cinema-progress-fill" id="cinema-progress-fill"></div>
+                <div class="cinema-scrub-handle" id="cinema-scrub-handle"></div>
+              </div>
+            </div>
+
+            <div class="cinema-dock-row">
+              <div class="dock-left">
+                <button class="cinema-btn" id="btn-cinema-toggle" aria-label="Toggle Play/Pause">
+                  <span id="cinema-toggle-icon">▶</span>
+                </button>
+                <div class="cinema-time-display">
+                  <span id="cinema-current-time">00:00</span>
+                  <span class="time-sep">/</span>
+                  <span id="cinema-duration">00:00</span>
+                </div>
+              </div>
+
+              <div class="dock-center">
+                <span class="cinema-spec-pill">SEASON 01 · STONE AGE</span>
+                <span class="cinema-spec-pill">FIRST VALLEY REVEAL</span>
+              </div>
+
+              <div class="dock-right">
+                <button class="cinema-btn" id="btn-cinema-volume" aria-label="Mute / Unmute">
+                  <span id="cinema-volume-icon">🔊</span>
+                </button>
+                <button class="cinema-btn" id="btn-cinema-fullscreen" aria-label="Toggle Fullscreen">
+                  <span>⛶</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────
+       THE WORLD IS ALIVE
+       Short atmospheric snippet with link to dedicated World page
+       ────────────────────────────────────────────────────────── -->
+  <section class="site-section section-world-intro" id="world-intro">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">A PREHISTORIC CONTINENT</span>
+        <h2>The World Is Alive</h2>
+        <p class="section-lead">
+          Stones to Stars takes place across Archaia — an untamed ecosystem where weather, wildlife, and natural hazards operate without caring if you survive.
+          Built on a simple philosophy: <strong>restrained, painterly art direction with world-class composition.</strong>
+        </p>
+      </div>
+
+      <!-- 4 Pillars Grid -->
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="p-icon">🌍</div>
+          <h3>WORLD</h3>
+          <p>Living terrain that shifts with the seasons, from glacial river melt to sub-zero blizzards.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="p-icon">🔥</div>
+          <h3>SURVIVE</h3>
+          <p>Manage body heat, forage calories, track hydration, and find shelter before darkness falls.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="p-icon">🧭</div>
+          <h3>EXPLORE</h3>
+          <p>Chart virgin pine forests, mammoth migratory plains, sandstone gorges, and ice summits.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="p-icon">🪨</div>
+          <h3>ADAPT</h3>
+          <p>Knap wild flint, lash bone spearheads, and shape wood. Cunning is your only leverage.</p>
+        </div>
+      </div>
+
+      <!-- Valley Map Feature Snippet -->
+      <div class="valley-map-feature">
+        <div class="vmf-media">
+          <img src="public/assets/prehistoric_world_map.jpg" alt="Prehistoric Map of Archaia" class="vmf-img">
+          <div class="vmf-badge">CONTINENT OF ARCHAIA · EXPEDITION MAP</div>
+        </div>
+        <div class="vmf-caption">
+          <h4>The First Valley</h4>
+          <p>Season 01 begins in a self-contained prehistoric valley — dense pine forest, sheer river gorges, and an apex predator nesting territory.</p>
+          <div style="margin-top: 16px;">
+            <a href="world.html" style="color: var(--c-amber); font-family: var(--fs); font-weight: 700; letter-spacing: 0.12em;">
+              EXPLORE FULL MAP &amp; 4 BIOMES →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────
+       SURVIVAL ISN'T A GAME
+       Core experience snippet with link to Game page
+       ────────────────────────────────────────────────────────── -->
+  <section class="site-section section-survival-intro" id="survival-intro">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">GAMEPLAY PHILOSOPHY</span>
+        <h2>Survival Isn't a Game</h2>
+        <p class="section-lead">
+          You have no magical inventory and no superhero abilities. Every calorie spent running must be hunted or gathered back. A single broken ankle or hypothermic night is lethal.
+        </p>
+        <div>
+          <a href="game.html" class="btn-hero-secondary">
+            <span>DISCOVER THE GAMEPLAY ARCHITECTURE →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────
+       SEASON 01: STONE AGE
+       Teaser & Visual Moments
+       ────────────────────────────────────────────────────────── -->
+  <section class="site-section section-season" id="season-01">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">THE CURRENT CHAPTER</span>
+        <h2>Season 01: Stone Age</h2>
+        <p class="season-intro-quote">
+          “Before cities. Before kingdoms. Before history had a name.”
+        </p>
+        <p class="section-lead">
+          You step into the shoes of Hu, an early hunter navigating an unforgiving ecosystem.
+          Your objective isn’t conquest — it’s making it to tomorrow.
+        </p>
+      </div>
+
+      <!-- 3 Visual Moments -->
+      <div class="season-triad-grid">
+        <div class="triad-card">
+          <span class="triad-num">01</span>
+          <h3>SURVIVE</h3>
+          <p>Explore a world that doesn't belong to you. Read animal tracks, hide your scent, and sprint when silence breaks.</p>
+        </div>
+
+        <div class="triad-card">
+          <span class="triad-num">02</span>
+          <h3>ADAPT</h3>
+          <p>Use what the land gives you. Combine wild flint, hardwood shafts, and animal sinew into primitive tools.</p>
+        </div>
+
+        <div class="triad-card">
+          <span class="triad-num">03</span>
+          <h3>DISCOVER</h3>
+          <p>Every step forward changes what comes next. Infiltrate predator nesting grounds and unlock human survival mastery.</p>
+        </div>
+      </div>
+
+      <div class="center" style="margin-top: 10px;">
+        <a href="season-01.html" class="btn-hero-primary">
+          <span>ENTER SEASON 01: STONE AGE →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────
+       LATEST FIELD NOTES (NEWS)
+       ────────────────────────────────────────────────────────── -->
+  <section class="site-section section-news" id="news">
+    <div class="section-container">
+      <div class="section-head">
+        <span class="section-eyebrow">DISPATCHES FROM THE STUDIO</span>
+        <h2>Latest Field Notes</h2>
+        <p class="section-lead">
+          Follow the development story of Stones to Stars as the world takes shape.
+        </p>
+      </div>
+
+      <div class="devlog-grid">
+        <!-- Log 1 -->
+        <article class="devlog-card">
+          <div class="dl-media">
+            <img src="public/assets/hero_bg.jpg" alt="The First Valley Render">
+            <span class="dl-tag">FIELD NOTES 014</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">SEPTEMBER 2026 · DEVELOPMENT</span>
+            <h3>The First Valley Takes Shape</h3>
+            <p>Sculpting the first playable prehistoric valley — balancing mountain silhouettes, river crossings, and dense brush lines for third-person stealth.</p>
+          </div>
+        </article>
+
+        <!-- Log 2 -->
+        <article class="devlog-card">
+          <div class="dl-media">
+            <img src="public/assets/cinder_threat.jpg" alt="Dinosaur AI Testing">
+            <span class="dl-tag">FIELD NOTES 013</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">AUGUST 2026 · DESIGN</span>
+            <h3>Designing Cinder: Animal Perception</h3>
+            <p>Tuning hearing radius, sight cones, and stealth crouch thresholds so every creature encounter feels tense and earned.</p>
+          </div>
+        </article>
+
+        <!-- Log 3 -->
+        <article class="devlog-card">
+          <div class="dl-media">
+            <img src="public/assets/prehistoric_world_map.jpg" alt="Prehistoric Map">
+            <span class="dl-tag">FIELD NOTES 012</span>
+          </div>
+          <div class="dl-body">
+            <span class="dl-date">JULY 2026 · ART &amp; VISUALS</span>
+            <h3>Cartography of Archaia</h3>
+            <p>How modular terrain assets and hand-crafted composition allow our independent team to compete on atmosphere and silhouette clarity.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="center">
+        <a href="news.html" class="btn-hero-secondary">
+          <span>READ ALL FIELD NOTES &amp; UPDATES →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────
+       COMMUNITY HIGHLIGHTS
+       ────────────────────────────────────────────────────────── -->
+  <section class="site-section section-community" id="community">
+    <div class="section-container">
+      <div class="section-head center">
+        <span class="section-eyebrow">TRIBAL GATHERING</span>
+        <h2>Community</h2>
+        <p class="section-lead">
+          What are you discovering? Screenshots, concept art, discussions, and playtest moments from explorers following our progress.
+        </p>
+      </div>
+
+      <!-- 3 Highlight Cards -->
+      <div class="community-grid">
+        <div class="comm-card">
+          <div class="comm-category">SCREENSHOT</div>
+          <h4>Lighting on the High Ridge</h4>
+          <p>Late afternoon sun shafts breaking through the pine canopy in the first valley build.</p>
+          <span class="comm-author">by @ArchaiaExplorer</span>
+        </div>
+
+        <div class="comm-card">
+          <div class="comm-category">FAN ART</div>
+          <h4>Hu in the Mist</h4>
+          <p>Stylized digital painting of the protagonist crouched near the riverbed.</p>
+          <span class="comm-author">by @PrimitiveDraws</span>
+        </div>
+
+        <div class="comm-card">
+          <div class="comm-category">GAMEPLAY</div>
+          <h4>The Egg Escape</h4>
+          <p>Clip testing the sprint mechanics when escaping Cinder's alert radius.</p>
+          <span class="comm-author">by Studio Playtester</span>
+        </div>
+      </div>
+
+      <div class="comm-action-box center">
+        <a href="community.html" class="btn-community-join">
+          <span>VIEW COMMUNITY PORTAL &amp; DISCORD →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────
+       THE JOURNEY AHEAD (WHAT'S NEXT)
+       Stone Age → Civilization → Stars
+       ────────────────────────────────────────────────────────── -->
+  <section class="site-section section-whats-next" id="whats-next">
+    <div class="section-container center">
+      <span class="section-eyebrow text-accent">THE FRANCHISE HORIZON</span>
+      <h2 class="cinematic-title">The Journey Ahead</h2>
+      <p class="section-lead">
+        Stones to Stars is imagined as a journey across humanity's transformation — but the journey begins here.
+        <strong>Season 01 is the focus.</strong>
+      </p>
+
+      <div class="roadmap-ladder">
+        <div class="road-step step-current">
+          <span class="rs-badge">IN ACTIVE PRODUCTION</span>
+          <h3>SEASON 01 · STONE AGE</h3>
+          <p>Primitive survival, primal ecosystems, predator stealth, flint craft.</p>
+        </div>
+        <div class="road-arrow">↓</div>
+        <div class="road-step">
+          <span class="rs-badge">FUTURE HORIZON</span>
+          <h3>SEASON 02 · CIVILIZATION</h3>
+          <p>Tribes, agriculture, bronze metallurgy, monumental architectures.</p>
+        </div>
+        <div class="road-arrow">↓</div>
+        <div class="road-step">
+          <span class="rs-badge">THE DESTINY</span>
+          <h3>STONES TO STARS</h3>
+          <p>Same Human. A Bigger Tomorrow. Interstellar voyages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────
+       PLAY CALL-TO-ACTION
+       ────────────────────────────────────────────────────────── -->
+  <section class="site-section section-play-cta" id="play-cta">
+    <div class="section-container center">
+      <span class="section-eyebrow">EXPERIENCE IT EARLY</span>
+      <h2>Step Into the World</h2>
+      <p class="section-lead">
+        PC prototype test builds are in development. Register your email to participate in upcoming private alpha playtests.
+      </p>
+      <div>
+        <a href="play.html" class="btn-hero-primary">
+          <span class="pulse-ring"></span>
+          <span>REGISTER FOR PLAYTEST ACCESS</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════════
+     STUDIO FOOTER
+     ══════════════════════════════════════════════════════════════ -->
+<footer class="studio-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-studio-brand">MAKWANA</span>
+      <img src="public/assets/logo-banner-clean.png" alt="Stones to Stars" class="fl-logo">
+      <p class="fl-tagline">THE WORLD WAS NEVER YOURS. YOU ONLY LEARNED TO SURVIVE IN IT.</p>
+      <p class="fl-copy">© 2026 Makwana. All rights reserved.</p>
+    </div>
+
+    <div class="footer-nav-columns">
+      <div class="fn-col">
+        <span class="fn-title">Game</span>
+        <a href="game.html">The Game</a>
+        <a href="season-01.html">Season 01: Stone Age</a>
+        <a href="world.html">World &amp; Biomes</a>
+        <a href="people.html">People (Hu)</a>
+        <a href="wildlife.html">Wildlife</a>
+        <a href="equipment.html">Equipment</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Studio</span>
+        <a href="news.html">Field Notes / News</a>
+        <a href="community.html">Community</a>
+        <a href="contribute.html">Build With Us</a>
+        <a href="join-us.html">Join Makwana</a>
+        <a href="about.html">About Makwana</a>
+      </div>
+      <div class="fn-col">
+        <span class="fn-title">Connect</span>
+        <a href="media.html">Media / Press Kit</a>
+        <a href="play.html">Play / Wishlist</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
