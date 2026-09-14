@@ -5,6 +5,10 @@ import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
+// Initialize Vercel Speed Insights (production Core Web Vitals telemetry)
+injectSpeedInsights();
 
 gsap.registerPlugin(ScrollTrigger);
 
