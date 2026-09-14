@@ -604,15 +604,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnToggle) btnToggle.addEventListener('click', toggleCinemaPlay);
     cinemaVideo.addEventListener('click', toggleCinemaPlay);
 
-    // Scrubbing
+    // Scrubbing (Click + Touch)
     if (scrubWrap) {
-      scrubWrap.addEventListener('click', (e) => {
+      const handleScrub = (clientX) => {
         const rect = scrubWrap.getBoundingClientRect();
-        const pos = (e.clientX - rect.left) / rect.width;
+        const pos = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
         if (cinemaVideo.duration) {
           cinemaVideo.currentTime = pos * cinemaVideo.duration;
         }
+      };
+
+      scrubWrap.addEventListener('click', (e) => {
+        handleScrub(e.clientX);
       });
+
+      scrubWrap.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          handleScrub(e.touches[0].clientX);
+        }
+      }, { passive: true });
+
+      scrubWrap.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          handleScrub(e.touches[0].clientX);
+        }
+      }, { passive: true });
     }
 
     // Volume Toggle
@@ -663,5 +679,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ─────────────────────────────────────────────────────────────
+     RESPONSIVE MOBILE NAVIGATION DRAWER
+     ───────────────────────────────────────────────────────────── */
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close drawer when clicking regular navigation links
+    navLinks.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Toggle dropdown accordions in mobile view
+    document.querySelectorAll('.nav-dropdown-group').forEach(group => {
+      const toggle = group.querySelector('.dropdown-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', (e) => {
+          if (window.innerWidth <= 860) {
+            e.preventDefault();
+            e.stopPropagation();
+            group.classList.toggle('mobile-expanded');
+          }
+        });
+      }
+    });
+
+    // Close mobile drawer on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
+        navLinks.classList.remove('mobile-open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
 });
+
 
