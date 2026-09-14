@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/public/assets/:path*",
+      "destination": "/assets/:path*"
+    }
+  ]
+}

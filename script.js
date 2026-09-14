@@ -106,13 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    loadTexture('public/assets/hero_bg.jpg', 'hero');
-    loadTexture('public/assets/biome_forest.jpg', 'forest');
-    loadTexture('public/assets/biome_plains.jpg', 'plains');
-    loadTexture('public/assets/biome_desert.jpg', 'desert');
-    loadTexture('public/assets/biome_snow.jpg', 'snow');
-    loadTexture('public/assets/cinder_threat.jpg', 'cinder');
-    loadTexture('public/assets/world_galaxies.jpg', 'stars');
+    loadTexture('/assets/hero_bg.jpg', 'hero');
+    loadTexture('/assets/biome_forest.jpg', 'forest');
+    loadTexture('/assets/biome_plains.jpg', 'plains');
+    loadTexture('/assets/biome_desert.jpg', 'desert');
+    loadTexture('/assets/biome_snow.jpg', 'snow');
+    loadTexture('/assets/cinder_threat.jpg', 'cinder');
+    loadTexture('/assets/world_galaxies.jpg', 'stars');
 
     const envOverlay = document.getElementById('env-lighting-overlay');
 
@@ -407,25 +407,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const weaponsCatalog = {
     spear: {
-      img: 'public/assets/weapon_spear.jpg',
+      img: '/assets/weapon_spear.jpg',
       name: 'Hunting Spear',
       desc: 'Versatile prehistoric weapon. Knapped point bound with rawhide to a hardened ash wood shaft. Ideal for medium-range thrusts and overhand throws.',
       baseDmg: 45, baseRng: 65, baseDur: 50
     },
     axe: {
-      img: 'public/assets/weapon_axe.jpg',
+      img: '/assets/weapon_axe.jpg',
       name: 'War Axe',
       desc: 'Heavy primitive bludgeon and cleaver. Chipped stone head lashed to curved wood with animal sinew. Crushes beast carapace and splits wood.',
       baseDmg: 80, baseRng: 25, baseDur: 75
     },
     dagger: {
-      img: 'public/assets/weapon_dagger.jpg',
+      img: '/assets/weapon_dagger.jpg',
       name: 'Hunting Dagger',
       desc: 'Carved mammoth bone blade with sharp serrations and leather grip wrap. Lightning-fast strikes and vital point carcass field-dressing.',
       baseDmg: 60, baseRng: 15, baseDur: 60
     },
     bow: {
-      img: 'public/assets/weapon_bow.jpg',
+      img: '/assets/weapon_bow.jpg',
       name: 'Sinew Bow',
       desc: 'Curved yew bow strung with twisted gut and animal sinew. Fires tipped reed arrows with lethal silence from high clifftops.',
       baseDmg: 40, baseRng: 90, baseDur: 45
